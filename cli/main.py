@@ -586,6 +586,14 @@ def get_user_selections():
             )
         )
         reasoning_effort = ask_openai_reasoning_effort()
+    elif provider_lower == "poe":
+        console.print(
+            create_question_box(
+                "Step 8: Reasoning Effort",
+                "Configure OpenAI reasoning effort level"
+            )
+        )
+        reasoning_effort = ask_openai_reasoning_effort()
     elif provider_lower == "anthropic":
         console.print(
             create_question_box(

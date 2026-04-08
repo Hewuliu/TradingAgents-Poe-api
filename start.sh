@@ -1,0 +1,2 @@
+conda activate tradingagents
+tradingagents

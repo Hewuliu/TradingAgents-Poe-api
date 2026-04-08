@@ -85,6 +85,22 @@ MODEL_OPTIONS: ProviderModeOptions = {
             ("Qwen3:latest (8B, local)", "qwen3:latest"),
         ],
     },
+    # 新增 poe 的配置
+    "poe": {
+        "quick": [
+            ("GPT-5.4 Mini - Fast, strong coding and tool use", "gpt-5.4-mini"),
+            ("GPT-5.4 Nano - Cheapest, high-volume tasks", "gpt-5.4-nano"),
+            ("GPT-5.4 - Latest frontier, 1M context", "gpt-5.4"),
+            ("GPT-4.1 - Smartest non-reasoning model", "gpt-4.1"),
+        ],
+        "deep": [
+            ("GPT-5.4 - Latest frontier, 1M context", "gpt-5.4"),
+            ("GPT-5.2 - Strong reasoning, cost-effective", "gpt-5.2"),
+            ("GPT-5.4 Mini - Fast, strong coding and tool use", "gpt-5.4-mini"),
+            ("GPT-5.4 Pro - Most capable, expensive ($30/$180 per 1M tokens)", "gpt-5.4-pro"),
+        ],
+    },
+
 }
 
 
