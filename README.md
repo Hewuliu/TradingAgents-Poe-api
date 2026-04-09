@@ -1,235 +1,306 @@
-<p align="center">
-  <img src="assets/TauricResearch.png" style="width: 60%; height: auto;">
-</p>
-
-<div align="center" style="line-height: 1;">
-  <a href="https://arxiv.org/abs/2412.20138" target="_blank"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2412.20138-B31B1B?logo=arxiv"/></a>
-  <a href="https://discord.com/invite/hk9PGKShPK" target="_blank"><img alt="Discord" src="https://img.shields.io/badge/Discord-TradingResearch-7289da?logo=discord&logoColor=white&color=7289da"/></a>
-  <a href="./assets/wechat.png" target="_blank"><img alt="WeChat" src="https://img.shields.io/badge/WeChat-TauricResearch-brightgreen?logo=wechat&logoColor=white"/></a>
-  <a href="https://x.com/TauricResearch" target="_blank"><img alt="X Follow" src="https://img.shields.io/badge/X-TauricResearch-white?logo=x&logoColor=white"/></a>
-  <br>
-  <a href="https://github.com/TauricResearch/" target="_blank"><img alt="Community" src="https://img.shields.io/badge/Join_GitHub_Community-TauricResearch-14C290?logo=discourse"/></a>
-</div>
-
 <div align="center">
-  <!-- Keep these links. Translations will automatically update with the README. -->
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=de">Deutsch</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=es">Español</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=fr">français</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=ja">日本語</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=ko">한국어</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=pt">Português</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=ru">Русский</a> | 
-  <a href="https://www.readme-i18n.com/TauricResearch/TradingAgents?lang=zh">中文</a>
+
+# TradingAgents with Poe Integration
+
+**A powerful multi-Agent trading framework integrating Poe platform API, supporting GPT, Claude, Gemini and more LLMs**
+
+[English](README.md) | [简体中文](README_zh.md)
+
+[![GitHub Stars](https://img.shields.io/github/stars/Hewuliu/TradingAgents-Poe-api?style=flat-square)](https://github.com/Hewuliu/TradingAgents-Poe-api)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
+
 </div>
 
 ---
 
-# TradingAgents: Multi-Agents LLM Financial Trading Framework
+> 📌 **Important Notice**: This project makes **NO modifications** to the original [TradingAgents](https://github.com/TauricResearch/TradingAgents) codebase. It only adds support for the Poe platform API, enabling seamless integration with multiple LLM providers (GPT, Claude, Gemini, etc.).
 
-## News
-- [2026-03] **TradingAgents v0.2.3** released with multi-language support, GPT-5.4 family models, unified model catalog, backtesting date fidelity, and proxy support.
-- [2026-03] **TradingAgents v0.2.2** released with GPT-5.4/Gemini 3.1/Claude 4.6 model coverage, five-tier rating scale, OpenAI Responses API, Anthropic effort control, and cross-platform stability.
-- [2026-02] **TradingAgents v0.2.0** released with multi-provider LLM support (GPT-5.x, Gemini 3.x, Claude 4.x, Grok 4.x) and improved system architecture.
-- [2026-01] **Trading-R1** [Technical Report](https://arxiv.org/abs/2509.11420) released, with [Terminal](https://github.com/TauricResearch/Trading-R1) expected to land soon.
+## 📌 Overview
 
-<div align="center">
-<a href="https://www.star-history.com/#TauricResearch/TradingAgents&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=TauricResearch/TradingAgents&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=TauricResearch/TradingAgents&type=Date" />
-   <img alt="TradingAgents Star History" src="https://api.star-history.com/svg?repos=TauricResearch/TradingAgents&type=Date" style="width: 80%; height: auto;" />
- </picture>
-</a>
-</div>
+**TradingAgents** is a multi-Agent financial trading framework powered by Large Language Models (LLMs). By integrating the **Poe platform API**, it supports seamless switching between and usage of top-tier models like GPT-4, Claude 3, and Gemini.
 
-> 🎉 **TradingAgents** officially released! We have received numerous inquiries about the work, and we would like to express our thanks for the enthusiasm in our community.
->
-> So we decided to fully open-source the framework. Looking forward to building impactful projects with you!
+This project is built upon the open-source framework [TradingAgents](https://github.com/TauricResearch/TradingAgents), with the following enhancement:
 
-<div align="center">
+✨ **Core Features:**
+- 🤖 **Multi-LLM Support**: Unified access to GPT, Claude, Gemini and more through Poe platform
+- 🔄 **Flexible Switching**: Use different LLM providers for different tasks without reconfiguring API keys
+- 📊 **Multi-Agent Collaboration**: Includes fundamental analysts, sentiment analysts, technical analysts and more
+- 🎯 **Real-time Trading Decisions**: Synthesize multi-agent analysis for intelligent trading decisions
+- 🔌 **Easy Integration**: Provides both CLI tool and Python package interfaces
+- 🐳 **Docker Support**: One-click containerized deployment
 
-🚀 [TradingAgents](#tradingagents-framework) | ⚡ [Installation & CLI](#installation-and-cli) | 🎬 [Demo](https://www.youtube.com/watch?v=90gr5lwjIho) | 📦 [Package Usage](#tradingagents-package) | 🤝 [Contributing](#contributing) | 📄 [Citation](#citation)
+## 🏗️ System Architecture
 
-</div>
+The framework employs a multi-Agent architecture, simulating real-world trading firm operations:
 
-## TradingAgents Framework
+```
+┌─────────────────────────────────────────────────────┐
+│                 Data Sources                         │
+│  (Alpha Vantage, Yahoo Finance, News feeds)         │
+└────────────────────┬────────────────────────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │   Analyst Team (Agents) │
+        │  • Fundamentals         │
+        │  • Sentiment            │
+        │  • News                 │
+        │  • Technical            │
+        └────────────┬────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │  Research Team (Agents) │
+        │  • Bull Researcher      │
+        │  • Bear Researcher      │
+        │  • Manager              │
+        └────────────┬────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │  Trading Decision (Agents)
+        │  • Trader               │
+        │  • Risk Management      │
+        │  • Portfolio Manager    │
+        └────────────┬────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │    Trade Execution      │
+        │  (Simulated Exchange)   │
+        └─────────────────────────┘
+```
 
-TradingAgents is a multi-agent trading framework that mirrors the dynamics of real-world trading firms. By deploying specialized LLM-powered agents: from fundamental analysts, sentiment experts, and technical analysts, to trader, risk management team, the platform collaboratively evaluates market conditions and informs trading decisions. Moreover, these agents engage in dynamic discussions to pinpoint the optimal strategy.
+### Agent Details
 
-<p align="center">
-  <img src="assets/schema.png" style="width: 100%; height: auto;">
-</p>
+#### 📈 **Analyst Team**
+- **Fundamentals Analyst**: Analyzes financial statements, profitability, and growth potential
+- **Sentiment Analyst**: Evaluates market sentiment through social media and public data
+- **News Analyst**: Monitors global news and macroeconomic indicators
+- **Technical Analyst**: Utilizes technical indicators (MACD, RSI, etc.) to forecast price movements
 
-> TradingAgents framework is designed for research purposes. Trading performance may vary based on many factors, including the chosen backbone language models, model temperature, trading periods, the quality of data, and other non-deterministic factors. [It is not intended as financial, investment, or trading advice.](https://tauric.ai/disclaimer/)
+#### 🔍 **Research Team**
+- **Bull Researcher**: Assesses market opportunities from a positive perspective
+- **Bear Researcher**: Evaluates potential risks from a critical perspective
+- **Manager**: Synthesizes diverse viewpoints and balances gains against risks
 
-Our framework decomposes complex trading tasks into specialized roles. This ensures the system achieves a robust, scalable approach to market analysis and decision-making.
+#### 💼 **Trading Execution Layer**
+- **Trader**: Makes informed decisions and determines trade timing and magnitude
+- **Risk Management**: Assesses market volatility, liquidity, and other risk factors
+- **Portfolio Manager**: Final approval/rejection of trading proposals and execution
 
-### Analyst Team
-- Fundamentals Analyst: Evaluates company financials and performance metrics, identifying intrinsic values and potential red flags.
-- Sentiment Analyst: Analyzes social media and public sentiment using sentiment scoring algorithms to gauge short-term market mood.
-- News Analyst: Monitors global news and macroeconomic indicators, interpreting the impact of events on market conditions.
-- Technical Analyst: Utilizes technical indicators (like MACD and RSI) to detect trading patterns and forecast price movements.
+> ⚠️ **Disclaimer**: This framework is for research and educational purposes only. Trading performance varies based on multiple factors including chosen LLM models, temperature parameters, trading periods, data quality, and more. **This is not financial, investment, or trading advice. Use at your own risk.**
 
-<p align="center">
-  <img src="assets/analyst.png" width="100%" style="display: inline-block; margin: 0 2%;">
-</p>
+## 🚀 Getting Started
 
-### Researcher Team
-- Comprises both bullish and bearish researchers who critically assess the insights provided by the Analyst Team. Through structured debates, they balance potential gains against inherent risks.
+### Prerequisites
 
-<p align="center">
-  <img src="assets/researcher.png" width="70%" style="display: inline-block; margin: 0 2%;">
-</p>
+- Python 3.10+
+- Poe account ([poe.com](https://poe.com))
+- (Optional) Docker and Docker Compose
 
-### Trader Agent
-- Composes reports from the analysts and researchers to make informed trading decisions. It determines the timing and magnitude of trades based on comprehensive market insights.
+### Method 1: Local Installation
 
-<p align="center">
-  <img src="assets/trader.png" width="70%" style="display: inline-block; margin: 0 2%;">
-</p>
-
-### Risk Management and Portfolio Manager
-- Continuously evaluates portfolio risk by assessing market volatility, liquidity, and other risk factors. The risk management team evaluates and adjusts trading strategies, providing assessment reports to the Portfolio Manager for final decision.
-- The Portfolio Manager approves/rejects the transaction proposal. If approved, the order will be sent to the simulated exchange and executed.
-
-<p align="center">
-  <img src="assets/risk.png" width="70%" style="display: inline-block; margin: 0 2%;">
-</p>
-
-## Installation and CLI
-
-### Installation
-
-Clone TradingAgents:
+**1. Clone the repository**
 ```bash
-git clone https://github.com/TauricResearch/TradingAgents.git
+git clone https://github.com/Hewuliu/TradingAgents-Poe-api.git
 cd TradingAgents
 ```
 
-Create a virtual environment in any of your favorite environment managers:
+**2. Create a virtual environment**
 ```bash
-conda create -n tradingagents python=3.13
+conda create -n tradingagents python=3.11
 conda activate tradingagents
 ```
 
-Install the package and its dependencies:
+**3. Install dependencies**
 ```bash
-pip install .
+pip install -r requirements.txt
 ```
 
-### Docker
+**4. Configure Poe API**
 
-Alternatively, run with Docker:
+Get your Poe API key and set environment variables:
 ```bash
-cp .env.example .env  # add your API keys
-docker compose run --rm tradingagents
+# Windows (PowerShell)
+$env:POE_API_KEY="your_poe_api_key"
+$env:ALPHA_VANTAGE_API_KEY="your_alpha_vantage_key"
+
+# Linux/Mac
+export POE_API_KEY="your_poe_api_key"
+export ALPHA_VANTAGE_API_KEY="your_alpha_vantage_key"
 ```
 
-For local models with Ollama:
-```bash
-docker compose --profile ollama run --rm tradingagents-ollama
+Or create a `.env` file:
+```env
+POE_API_KEY=your_poe_api_key
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
 ```
 
-### Required APIs
+### Method 2: Docker Deployment
 
-TradingAgents supports multiple LLM providers. Set the API key for your chosen provider:
-
-```bash
-export OPENAI_API_KEY=...          # OpenAI (GPT)
-export GOOGLE_API_KEY=...          # Google (Gemini)
-export ANTHROPIC_API_KEY=...       # Anthropic (Claude)
-export XAI_API_KEY=...             # xAI (Grok)
-export OPENROUTER_API_KEY=...      # OpenRouter
-export ALPHA_VANTAGE_API_KEY=...   # Alpha Vantage
-```
-
-For local models, configure Ollama with `llm_provider: "ollama"` in your config.
-
-Alternatively, copy `.env.example` to `.env` and fill in your keys:
+**1. Configure environment file**
 ```bash
 cp .env.example .env
+# Edit .env and add your POE_API_KEY and ALPHA_VANTAGE_API_KEY
 ```
 
-### CLI Usage
-
-Launch the interactive CLI:
+**2. Start the container**
 ```bash
-tradingagents          # installed command
-python -m cli.main     # alternative: run directly from source
+docker compose up -d
 ```
-You will see a screen where you can select your desired tickers, analysis date, LLM provider, research depth, and more.
 
-<p align="center">
-  <img src="assets/cli/cli_init.png" width="100%" style="display: inline-block; margin: 0 2%;">
-</p>
+### 💻 CLI Usage
 
-An interface will appear showing results as they load, letting you track the agent's progress as it runs.
+Launch the interactive command-line interface:
+```bash
+python -m cli.main
+```
 
-<p align="center">
-  <img src="assets/cli/cli_news.png" width="100%" style="display: inline-block; margin: 0 2%;">
-</p>
+Or if installed as a package:
+```bash
+tradingagents
+```
 
-<p align="center">
-  <img src="assets/cli/cli_transaction.png" width="100%" style="display: inline-block; margin: 0 2%;">
-</p>
+**CLI Features:**
+- 🔍 Select stock ticker symbols for analysis
+- 📅 Specify analysis date
+- 🤖 Choose your LLM (via Poe platform)
+  - GPT-4 / GPT-5
+  - Claude 3 Opus / Sonnet / Haiku
+  - Gemini Pro / Ultra
+  - Other Poe-supported models
+- 📊 Configure analysis depth and parameters
+- 📈 Real-time progress tracking and trading decisions
 
-## TradingAgents Package
+## 📚 Python API Usage
 
-### Implementation Details
+### Basic Usage
 
-We built TradingAgents with LangGraph to ensure flexibility and modularity. The framework supports multiple LLM providers: OpenAI, Google, Anthropic, xAI, OpenRouter, and Ollama.
-
-### Python Usage
-
-To use TradingAgents inside your code, you can import the `tradingagents` module and initialize a `TradingAgentsGraph()` object. The `.propagate()` function will return a decision. You can run `main.py`, here's also a quick example:
+Import and use TradingAgents in your Python code:
 
 ```python
 from tradingagents.graph.trading_graph import TradingAgentsGraph
 from tradingagents.default_config import DEFAULT_CONFIG
 
+# Initialize trading agents
 ta = TradingAgentsGraph(debug=True, config=DEFAULT_CONFIG.copy())
 
-# forward propagate
-_, decision = ta.propagate("NVDA", "2026-01-15")
+# Execute analysis and trading decision
+_, decision = ta.propagate("AAPL", "2026-04-01")
 print(decision)
 ```
 
-You can also adjust the default configuration to set your own choice of LLMs, debate rounds, etc.
+### Custom Configuration
+
+Modify configuration to use different LLMs and parameters:
 
 ```python
 from tradingagents.graph.trading_graph import TradingAgentsGraph
 from tradingagents.default_config import DEFAULT_CONFIG
 
 config = DEFAULT_CONFIG.copy()
-config["llm_provider"] = "openai"        # openai, google, anthropic, xai, openrouter, ollama
-config["deep_think_llm"] = "gpt-5.4"     # Model for complex reasoning
-config["quick_think_llm"] = "gpt-5.4-mini" # Model for quick tasks
-config["max_debate_rounds"] = 2
+
+# Poe platform configuration
+config["llm_provider"] = "poe"              # Use Poe platform
+config["deep_think_llm"] = "claude-3-opus"  # Claude 3 Opus for complex reasoning
+config["quick_think_llm"] = "gpt-4-turbo"   # GPT-4 for quick tasks
+config["max_debate_rounds"] = 3             # Number of agent debate rounds
+
+# Other optional configurations
+config["research_depth"] = "deep"           # Analysis depth: shallow/medium/deep
+config["temperature"] = 0.7                 # Model temperature
+config["enable_cache"] = True               # Enable caching
 
 ta = TradingAgentsGraph(debug=True, config=config)
-_, decision = ta.propagate("NVDA", "2026-01-15")
-print(decision)
+_, decision = ta.propagate("NVDA", "2026-04-01")
 ```
 
-See `tradingagents/default_config.py` for all configuration options.
+### Supported Models via Poe
 
-## Contributing
+Available models through Poe platform:
 
-We welcome contributions from the community! Whether it's fixing a bug, improving documentation, or suggesting a new feature, your input helps make this project better. If you are interested in this line of research, please consider joining our open-source financial AI research community [Tauric Research](https://tauric.ai/).
+| Provider | Models | Recommended Use |
+|----------|--------|-----------------|
+| **OpenAI** | GPT-4, GPT-5 | General analysis, complex reasoning |
+| **Anthropic** | Claude 3 (Opus/Sonnet/Haiku) | Long-text processing, deep analysis |
+| **Google** | Gemini Pro/Ultra | Multimodal processing, fast responses |
+| **Others** | More models | Subject to Poe updates |
 
-## Citation
+See [tradingagents/default_config.py](tradingagents/default_config.py) for all configuration options.
 
-Please reference our work if you find *TradingAgents* provides you with some help :)
+### Project Structure
 
 ```
-@misc{xiao2025tradingagentsmultiagentsllmfinancial,
-      title={TradingAgents: Multi-Agents LLM Financial Trading Framework}, 
-      author={Yijia Xiao and Edward Sun and Di Luo and Wei Wang},
-      year={2025},
-      eprint={2412.20138},
-      archivePrefix={arXiv},
-      primaryClass={q-fin.TR},
-      url={https://arxiv.org/abs/2412.20138}, 
-}
+tradingagents/
+├── agents/              # Agent implementations
+│   ├── analysts/       # Analyst Agents
+│   ├── researchers/    # Researcher Agents
+│   ├── trader/         # Trader Agent
+│   └── risk_mgmt/      # Risk Management Agent
+├── dataflows/          # Data flows and sources
+│   ├── alpha_vantage*.py
+│   ├── y_finance.py
+│   └── yfinance_news.py
+├── graph/              # LangGraph workflows
+│   ├── trading_graph.py
+│   ├── signal_processing.py
+│   └── propagation.py
+├── llm_clients/        # LLM clients (including Poe)
+│   ├── base_client.py
+│   └── poe_client.py   # ✨ Poe platform integration
+└── default_config.py   # Default configuration
 ```
+
+## 🤝 Contributing
+
+We welcome Issues and Pull Requests! This project accepts contributions of:
+
+- 🐛 Bug fixes
+- ✨ New features
+- 📚 Documentation improvements
+- 🔧 Dependency updates
+- 🧪 Test cases
+
+### Submission Process
+
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📖 FAQ
+
+### Q: How do I get a Poe API key?
+
+**A:** Visit [poe.com](https://poe.com), create an account, and generate your API key in settings.
+
+### Q: Which stock markets are supported?
+
+**A:** Through Alpha Vantage and Yahoo Finance, the framework supports major global markets including US stocks (NYSE, NASDAQ), Hong Kong stocks, and Chinese A-shares.
+
+### Q: How can I customize Agent behavior?
+
+**A:** Edit the corresponding Agent classes in `tradingagents/agents/` or adjust parameters in the configuration.
+
+### Q: Can I use real money for trading?
+
+**A:** Currently, the framework only supports simulated trading. Integrating real trading requires additional risk assessment and compliance handling.
+
+## 📄 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details
+
+## 🙏 Acknowledgments
+
+This project is built upon the open-source [TradingAgents](https://github.com/TauricResearch/TradingAgents) framework. Special thanks to the original contributors.
+
+The Poe platform integration enables flexible, convenient support for multiple LLM providers.
+
+---
+
+<div align="center">
+
+**⭐ If this project helps you, please give it a Star!**
+
+Made with ❤️ by Contributors
+
+</div>
